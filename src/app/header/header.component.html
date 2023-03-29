@@ -1,0 +1,30 @@
+
+
+<mat-toolbar color="primary" class="header">
+  <div class="branding">
+    <span class="material-icons red-color">shopping_cart </span>
+    <h1>Shopper's Stop</h1>
+    <a routerLink="" class="toggle-button">
+      <mat-icon>storage</mat-icon> 
+    </a>
+  </div>
+ 
+  
+  <div class="search">
+    <form>
+      <input type="text" placeholder="Type to search..." />
+      <mat-icon class="searchIcon">search</mat-icon>
+    </form>
+   
+  </div>
+
+<nav>
+  <ul class="nav_links">
+    <li>  <a mat-button routerLink=""><mat-icon aria-hidden="false" fontIcon="home"></mat-icon>Home</a></li>
+    <li>  <a mat-button routerLink="seller"><mat-icon aria-hidden="false" fontIcon="person"></mat-icon>Seller</a></li>
+    <li><a mat-button href="#"><mat-icon aria-hidden="false" fontIcon="shopping_cart"></mat-icon>Cart(0)</a></li>
+    <li>  <a class="login" mat-raised-button color="accent" href="#">Login</a></li>
+  </ul>
+</nav>
+</mat-toolbar>
+

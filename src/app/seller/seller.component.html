@@ -1,0 +1,107 @@
+<div class="login" *ngIf="!showLogin">
+  <form class="loginForm" [formGroup]="login">
+    <mat-card>
+      <mat-card-content>
+        <mat-label> <h1>Seller Login</h1></mat-label>
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input
+              matInput
+              placeholder="pat@example.com"
+              required
+              formControlName="Email"
+            />
+            <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="Password" />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <br />
+          <button mat-raised-button color="primary" (click)="signinSubmit()">Login</button>
+          <button mat-raised-button color="accent" (click)="resetData(login)">Reset</button>
+
+          <h3>
+            <span>New User?</span
+            ><a (click)="opensignup()" mat-button color="warn">SignUp</a>
+          </h3>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>
+
+<!-- Signup Form Start -->
+
+<div class="login" *ngIf="showLogin">
+  <form class="loginForm" [formGroup]="signup">
+    <mat-card>
+      <mat-card-content>
+        <div class="example-container">
+        <mat-label> <h1>Seller SignUp</h1></mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Enter your name" name="Name" formControlName="Name" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        </div>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input
+                matInput
+                placeholder="pat@example.com"
+                required
+                name="Email" formControlName="Email"
+              />
+              <mat-error *ngIf="email.invalid">{{
+                getErrorMessage()
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+       
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="Password" formControlName="Password"/>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          
+          <br />
+          <button mat-raised-button color="primary" (click)="signupSubmit()">Submit</button>
+          <button mat-raised-button color="warn" (click)="resetData(signup)">Reset</button>
+
+          <h3>
+            <span>Already User?</span
+            ><button (click)="openlogin()" mat-button color="warn">
+              SignIn
+            </button>
+            
+          </h3>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>
+
+<!-- ---------------------------------------------------------------- -->
