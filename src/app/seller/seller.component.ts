@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SellerService } from '../services/seller.service';
 import { Router } from '@angular/router';
+import { signup } from '../dataType';
 
 @Component({
   selector: 'app-seller',
@@ -32,7 +33,7 @@ export class SellerComponent {
     Password: new FormControl(''),
     Email: new FormControl(''),
   });
-  signupSubmit() {
+  /*signupSubmit() {
     // console.log(this.signup.value)     signup is form name
     this.seller.userSignUp(this.signup.value).subscribe((res: any) => {
       if (res) {
@@ -40,6 +41,11 @@ export class SellerComponent {
         this.route.navigate(['sellerHome']); //used routing path
       }
     });
+  }*/
+
+  signupSubmit():void {
+     console.log(this.signup.value);
+     this.seller.userSignUp(this.signup.value);
   }
 
   // -------------------------------------------------------------
